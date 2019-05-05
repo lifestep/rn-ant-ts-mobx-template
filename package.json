@@ -1,0 +1,51 @@
+{
+  "name": "c2c",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "ios": "react-native run-ios  --simulator 'iPhone 6s Plus'",
+    "iosx": "react-native run-ios --simulator 'iPhone X' ",
+    "android": "react-native run-android",
+    "android-build": "cd android && gradlew assembleRelease",
+    "keystore": "keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000",
+    "ios-bundle-build": "react-native bundle --platform ios --entry-file index.js --bundle-output ./build-ios/main.jsbundle --assets-dest ./build-ios --dev false",
+    "android-bundle-build": "react-native bundle --platform android --entry-file index.js --bundle-output ./build-android/index.android.bundle --assets-dest ./build-android --dev false",
+    "ios-push": "code-push release coolchat-ios ./build-ios/ 0.0.1 --deploymentName Production  --description 'app出生' --mandatory true --rollout 100%",
+    "android-push": "code-push release coolchat-android ./build-android/ 0.0.1 --deploymentName Production --description 'app出生' --mandatory true --rollout 100%",
+    "ios-push-test": "code-push release coolchat-ios ./build-ios/ 0.0.1 --description 'app出生' --mandatory true",
+    "android-push-test": "code-push release coolchat-android ./build-android/ 0.0.1 --description 'app出生' --mandatory true",
+    "ios-upinfo": "code-push deployment ls coolchat-ios",
+    "android-upinfo": "code-push deployment ls coolchat-android"
+  },
+  "dependencies": {
+    "@ant-design/react-native": "^3.1.7",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "react": "16.8.3",
+    "react-native": "0.59.5",
+    "react-native-gesture-handler": "^1.2.0",
+    "react-navigation": "^3.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "@types/jest": "^24.0.12",
+    "@types/react": "^16.8.15",
+    "@types/react-native": "^0.57.51",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-jest": "^24.7.1",
+    "babel-plugin-import": "^1.11.0",
+    "jest": "^24.7.1",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "react-test-renderer": "16.8.3",
+    "typescript": "^3.4.5"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
