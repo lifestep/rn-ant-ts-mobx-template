@@ -1,5 +1,5 @@
 **react native 项目**
-# c2c：币交易
+# some project
 
 * 使用 yarn
   * 安装依赖
@@ -17,8 +17,8 @@
 - ```"ios-bundle-build": "react-native bundle --platform ios --entry-file index.js --bundle-output ./build-ios/main.jsbundle --assets-dest ./build-ios --dev false",```
 - ```"android-bundle-build": "react-native bundle --platform android --entry-file index.js --bundle-output ./build-android/index.android.bundle --assets-dest ./build-android --dev false",```
 - ```"ios-push": "code-push release coolchat-ios ./build-ios/ 0.0.1 --deploymentName Production  --description 'app出生' --mandatory true --rollout 100%",```
-- ```"android-push": "code-push release coolchat-android ./build-android/ 0.0.1 --deploymentName Production --description 'app出生' --mandatory true --rollout 100%",```
-- ```"ios-push-test": "code-push release coolchat-ios ./build-ios/ 0.0.1 --description 'app出生' --mandatory true",```
-- ```"android-push-test": "code-push release coolchat-android ./build-android/ 0.0.1 --description 'app出生' --mandatory true",```
-- ```"ios-upinfo": "code-push deployment ls coolchat-ios",```
-- ```"android-upinfo": "code-push deployment ls coolchat-android"```
+- ```"android-push": "code-push release push-android ./build-android/ 0.0.1 --deploymentName Production --description 'app出生' --mandatory true --rollout 100%",```
+- ```"ios-push-test": "code-push release push-ios ./build-ios/ 0.0.1 --description 'app出生' --mandatory true",```
+- ```"android-push-test": "code-push release push-android ./build-android/ 0.0.1 --description 'app出生' --mandatory true",```
+- ```"ios-upinfo": "code-push deployment ls push-ios",```
+- ```"android-upinfo": "code-push deployment ls push-android"```
